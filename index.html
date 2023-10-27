@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+    <script>
+        function inputCheck() {
+            var inputValue = document.getElementById( "hana" ).value;
+            var inputValue2 = document.getElementById( "hatake" ).value;
+            document.getElementById( "check" ).innerHTML = "(　´･" + inputValue + "･`)" + inputValue2;
+        }
+        function copy() {
+            var target = document.getElementById("check");
+            
+            navigator.clipboard.writeText(target.innerHTML);
+        }
+    </script>
+<h1>畠山ジェネレータ</h1>
+<br>
+<input type="text" id="hana" onkeyup="inputCheck()">鼻を入力</input>
+<br>
+<br>
+<input type="text" id="hatake" onkeyup="inputCheck()">山の部分を入力</input>
+<br>
+<br>
+<div id="check">(　´･畠･`)山</div>
+<button onclick="copy()">クリップボードにコピー</button>
+</body>
+</html>
