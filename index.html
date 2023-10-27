@@ -33,8 +33,8 @@
             var z = "－－・・";
 
             var translate = "";
-            for (var i = 0; i < genbun.length; i++) {
-                cha = genbun[i];
+            for (var num = 0; num < genbun.length; num++) {
+                cha = genbun[num];
                 if (cha == "a" || cha == "A") translate += a + "　";
                 if (cha == "b" || cha == "B") translate += b + "　";
                 if (cha == "c" || cha == "C") translate += c + "　";
@@ -64,10 +64,10 @@
             }
 
             var final = "";
-            for (var i = 0; i < translate.length; i++) {
-                sig = translate[i];
-                if (sig == "・") final += "ﾆｮﾎ ";
-                if (sig == "－") final += "ﾆｮﾎﾎ ";
+            for (var num = 0; num < translate.length; num++) {
+                sig = translate[num];
+                if (sig == "・") final += "ﾆｮホ ";
+                if (sig == "－") final += "ﾆｮホホ ";
                 if (sig == "　") final += "(^^) ";
             }
 
