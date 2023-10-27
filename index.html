@@ -36,39 +36,43 @@
             for (var num = 0; num < genbun.length; num++) {
                 cha = genbun[num];
                 if (cha == "a" || cha == "A") translate += a + "　";
-                if (cha == "b" || cha == "B") translate += b + "　";
-                if (cha == "c" || cha == "C") translate += c + "　";
-                if (cha == "d" || cha == "D") translate += d + "　";
-                if (cha == "e" || cha == "E") translate += e + "　";
-                if (cha == "f" || cha == "F") translate += f + "　";
-                if (cha == "g" || cha == "G") translate += g + "　";
-                if (cha == "h" || cha == "H") translate += h + "　";
-                if (cha == "i" || cha == "I") translate += i + "　";
-                if (cha == "j" || cha == "J") translate += j + "　";
-                if (cha == "k" || cha == "K") translate += k + "　";
-                if (cha == "l" || cha == "L") translate += l + "　";
-                if (cha == "m" || cha == "M") translate += m + "　";
-                if (cha == "n" || cha == "N") translate += n + "　";
-                if (cha == "o" || cha == "O") translate += o + "　";
-                if (cha == "p" || cha == "P") translate += p + "　";
-                if (cha == "q" || cha == "Q") translate += q + "　";
-                if (cha == "r" || cha == "R") translate += r + "　";
-                if (cha == "s" || cha == "S") translate += s + "　";
-                if (cha == "t" || cha == "T") translate += t + "　";
-                if (cha == "u" || cha == "U") translate += u + "　";
-                if (cha == "v" || cha == "V") translate += v + "　";
-                if (cha == "w" || cha == "W") translate += w + "　";
-                if (cha == "x" || cha == "X") translate += x + "　";
-                if (cha == "y" || cha == "Y") translate += y + "　";
-                if (cha == "z" || cha == "Z") translate += z + "　";
+                else if (cha == "b" || cha == "B") translate += b + "　";
+                else if (cha == "c" || cha == "C") translate += c + "　";
+                else if (cha == "d" || cha == "D") translate += d + "　";
+                else if (cha == "e" || cha == "E") translate += e + "　";
+                else if (cha == "f" || cha == "F") translate += f + "　";
+                else if (cha == "g" || cha == "G") translate += g + "　";
+                else if (cha == "h" || cha == "H") translate += h + "　";
+                else if (cha == "i" || cha == "I") translate += i + "　";
+                else if (cha == "j" || cha == "J") translate += j + "　";
+                else if (cha == "k" || cha == "K") translate += k + "　";
+                else if (cha == "l" || cha == "L") translate += l + "　";
+                else if (cha == "m" || cha == "M") translate += m + "　";
+                else if (cha == "n" || cha == "N") translate += n + "　";
+                else if (cha == "o" || cha == "O") translate += o + "　";
+                else if (cha == "p" || cha == "P") translate += p + "　";
+                else if (cha == "q" || cha == "Q") translate += q + "　";
+                else if (cha == "r" || cha == "R") translate += r + "　";
+                else if (cha == "s" || cha == "S") translate += s + "　";
+                else if (cha == "t" || cha == "T") translate += t + "　";
+                else if (cha == "u" || cha == "U") translate += u + "　";
+                else if (cha == "v" || cha == "V") translate += v + "　";
+                else if (cha == "w" || cha == "W") translate += w + "　";
+                else if (cha == "x" || cha == "X") translate += x + "　";
+                else if (cha == "y" || cha == "Y") translate += y + "　";
+                else if (cha == "z" || cha == "Z") translate += z + "　";
+                else if (cha == " ") translate += "\n";
+                else translate += "？";
             }
 
             var final = "";
             for (var num = 0; num < translate.length; num++) {
                 sig = translate[num];
-                if (sig == "・") final += "ﾆｮホ ";
-                if (sig == "－") final += "ﾆｮホホ ";
+                if (sig == "・") final += "ﾆｮﾎ ";
+                if (sig == "－") final += "ﾆｮﾎﾎｯ ";
                 if (sig == "　") final += "(^^) ";
+                if (sig == "\n") final += "<br>";
+                if (sig == "？") final += "？";
             }
 
             document.getElementById( "translate" ).innerHTML = translate;
@@ -83,7 +87,7 @@
 <h1>ﾆｮﾎﾎGenerator</h1>
 <br>
 <input type="text" id="genbun" onkeyup="inputCheck()">原文を入力（アルファベットのみ）</input>
-</br>
+<br>
 <div id="translate">－</div>
 <div id="final">ﾆｮﾎﾎ(^^)</div>
 <button onclick="copy()">クリップボードにコピー</button>
