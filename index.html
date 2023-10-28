@@ -15,9 +15,9 @@
             for (var num = 0; num < genbun.length; num++) {
                 cha = genbun[num];
                 var check = false;
-                for (var c = 0; c < cha1.length; c++) {
-                    if (cha == cha1[c] || cha == cha2[c]) {
-                        translate += morusu[c] + "　";
+                for (var ch = 0; ch < cha1.length; ch++) {
+                    if (cha == cha1[ch] || cha == cha2[ch]) {
+                        translate += morusu[ch] + "　";
                         check = true;
                         break;
                     }
@@ -46,13 +46,51 @@
             
             navigator.clipboard.writeText(target.innerHTML);
         }
+        function inputCheck2() {
+            var genbun = document.getElementById( "nyohongo" ).value;
+
+            const morusu = ["・－","－・・・","－・－・","－・・","・","・・－・","－－・","・・・・",
+                            "・・","・－－－","－・－","・－・・","－－","－・","－－－","・－－・","－－・－",
+                           "・－・","・・・","－","・・－","・・・－","・－－","－・・－","－・－－","－－・・","|"];
+            const cha2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," "];
+
+            let tango = genbun.split("\n");
+            var translate = "";
+            for (var num = 0; num < tango.length; num++) {
+                var shosetu = tango[num].split(" ");
+                for (var n2 = 0; n2 < shosetu.length; n2++) {
+                    sig = shosetu[n2];
+                    if (sig == "ﾆｮﾎ") translate += "・";
+                    if (sig == "ﾆｮﾎﾎ") translate += "－";
+                    if (sig == "(^^)") translate += "　";
+                }
+                translate += "　|　";
+            }
+
+            let before = translate.split("　");
+            var final = "";
+            for (var num = 0; num < before.length; num++) {
+                for (var n2 = 0; n2 < morusu.length; n2++) {
+                    if (before[num] == morusu[n2]) final += cha2[n2];
+                }
+            }
+            
+            document.getElementById( "translate2" ).innerHTML = translate;
+            document.getElementById( "final2" ).innerHTML = final;
+        }
     </script>
 <h1>ﾆｮﾎﾎGenerator</h1>
 <br>
-<input type="text" id="genbun" onkeyup="inputCheck()">原文を入力（アルファベットのみ）</input>
+<input type="text" id="genbun" onkeyup="inputCheck()">アルファベット→ニョホん語</input>
 <br>
 <div id="translate">－</div>
 <div id="final">ﾆｮﾎﾎ(^^)</div>
 <button onclick="copy()">クリップボードにコピー</button>
+<br>
+<br>
+<input type="text" id="nyohongo" onkeyup="inputCheck2()">ニョホん語→アルファベット</input>
+<div id="translate2">－</div>
+<div id="final2">NYOHOHO</div>
+<br>
 </body>
 </html>
