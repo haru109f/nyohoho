@@ -48,7 +48,7 @@
         function copy() {
             var target = document.getElementById("final");
             
-            navigator.clipboard.writeText(target.innerHTML.replace("<br>", "\n"));
+            navigator.clipboard.writeText(target.innerHTML.replace("/<br>/g", "\n"));
         }
         function inputCheck2() {
             var genbun = document.getElementById( "nyohongo" ).value;
