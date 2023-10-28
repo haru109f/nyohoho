@@ -14,13 +14,15 @@
             var translate = "";
             for (var num = 0; num < genbun.length; num++) {
                 cha = genbun[num];
+                var check = false;
                 for (var c = 0; c < cha1.length; c++) {
                     if (cha == cha1[c] || cha == cha2[c]) {
                         translate += morusu[c] + " ";
+                        check = true;
                         break;
                     }
-                    translate += "？";
                 }
+                if (check == false) translate += "？";
             }
 
             var final = "";
