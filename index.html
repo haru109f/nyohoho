@@ -33,7 +33,7 @@
                 if (sig == "　") final += "(^^) ";
                 if (sig == "|") {
                     translate[num] = "<br>";
-                    final += "<br>";
+                    final += "|<br>";
                 }
                 if (sig == "？") final += "？";
             }
@@ -54,7 +54,7 @@
                            "・－・","・・・","－","・・－","・・・－","・－－","－・・－","－・－－","－－・・","|"];
             const cha2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," "];
 
-            let tango = genbun.split("\n");
+            let tango = genbun.split("|");
             var translate = "";
             for (var num = 0; num < tango.length; num++) {
                 var shosetu = tango[num].split(" ");
