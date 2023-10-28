@@ -5,64 +5,22 @@
         function inputCheck() {
             var genbun = document.getElementById( "genbun" ).value;
 
-            var a = "・－";
-            var b = "－・・・";
-            var c = "－・－・";
-            var d = "－・・";
-            var e = "・";
-            var f = "・・－・";
-            var g = "－－・";
-            var h = "・・・・";
-            var i = "・・";
-            var j = "・－－－";
-            var k = "－・－";
-            var l = "・－・・";
-            var m = "－－";
-            var n = "－・";
-            var o = "－－－";
-            var p = "・－－・";
-            var q = "－－・－";
-            var r = "・－・";
-            var s = "・・・";
-            var t = "－";
-            var u = "・・－";
-            var v = "・・・－";
-            var w = "・－－";
-            var x = "－・・－";
-            var y = "－・－－";
-            var z = "－－・・";
+            const morusu = ["・－","－・・・","－・－・","－・・","・","・・－・","－－・","・・・・",
+                            "・・","・－－－","－・－","・－・・","－－","－・","－－－","・－－・","－－・－",
+                           "・－・","・・・","－","・・－","・・・－","・－－","－・・－","－・－－","－－・・","\n"];
+            const cha1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "];
+            const cha2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," "];
 
             var translate = "";
             for (var num = 0; num < genbun.length; num++) {
                 cha = genbun[num];
-                if (cha == "a" || cha == "A") translate += a + "　";
-                else if (cha == "b" || cha == "B") translate += b + "　";
-                else if (cha == "c" || cha == "C") translate += c + "　";
-                else if (cha == "d" || cha == "D") translate += d + "　";
-                else if (cha == "e" || cha == "E") translate += e + "　";
-                else if (cha == "f" || cha == "F") translate += f + "　";
-                else if (cha == "g" || cha == "G") translate += g + "　";
-                else if (cha == "h" || cha == "H") translate += h + "　";
-                else if (cha == "i" || cha == "I") translate += i + "　";
-                else if (cha == "j" || cha == "J") translate += j + "　";
-                else if (cha == "k" || cha == "K") translate += k + "　";
-                else if (cha == "l" || cha == "L") translate += l + "　";
-                else if (cha == "m" || cha == "M") translate += m + "　";
-                else if (cha == "n" || cha == "N") translate += n + "　";
-                else if (cha == "o" || cha == "O") translate += o + "　";
-                else if (cha == "p" || cha == "P") translate += p + "　";
-                else if (cha == "q" || cha == "Q") translate += q + "　";
-                else if (cha == "r" || cha == "R") translate += r + "　";
-                else if (cha == "s" || cha == "S") translate += s + "　";
-                else if (cha == "t" || cha == "T") translate += t + "　";
-                else if (cha == "u" || cha == "U") translate += u + "　";
-                else if (cha == "v" || cha == "V") translate += v + "　";
-                else if (cha == "w" || cha == "W") translate += w + "　";
-                else if (cha == "x" || cha == "X") translate += x + "　";
-                else if (cha == "y" || cha == "Y") translate += y + "　";
-                else if (cha == "z" || cha == "Z") translate += z + "　";
-                else if (cha == " ") translate += "\n";
-                else translate += "？";
+                for (var c = 0; c < cha1.length; c++) {
+                    if (cha == cha1[c] || cha == cha2[c]) {
+                        translate += morusu[c] + " ";
+                        break;
+                    }
+                    translate += "？";
+                }
             }
 
             var final = "";
