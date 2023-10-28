@@ -17,7 +17,11 @@
                 var check = false;
                 for (var ch = 0; ch < cha1.length; ch++) {
                     if (cha == cha1[ch] || cha == cha2[ch]) {
-                        translate += morusu[ch] + "　";
+                        if (ch == cha.length - 1) {
+                            translate += morusu[ch];
+                        } else {
+                            translate += morusu[ch] + "　";
+                        }
                         check = true;
                         break;
                     }
